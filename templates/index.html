@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente Jurídico IA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header chat-header">
+        <div class="container header-content">
+            <a href="{{ url_for('index') }}" class="back-button-header" title="Volver al Inicio">
+                Volver al Inicio
+            </a>
+            <h1>🧑‍⚖️ Asistente Jurídico IA</h1>
+            </div>
+    </header>
+
+    <div class="chat-container">
+        <div id="chat-box" class="chat-box">
+            <div class="message assistant-message">
+                <p>¡Hola! Soy tu asistente jurídico. Pregúntame sobre trámites legales.</p>
+            </div>
+        </div>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Escribe tu pregunta aquí..." autofocus>
+            <button id="send-button">Enviar</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+/* Variables CSS */
+:root {
+    --back-button-color: #dc3545; /* Rojo fuerte para el botón de volver */
+    --back-button-hover-color: #c82333; /* Rojo más oscuro para hover */
+
+    /* Tus variables de chat existentes si las usas */
+    --chat-bg-color: #f0f2f5;
+    --chat-container-bg: #fff;
+    --chat-header-bg: #e9ecef; /* Usaremos este color para el fondo del nuevo header */
+    --user-message-bg: #007bff;
+    --assistant-message-bg: #e2e6ea;
+    --input-border-color: #ccc;
+    --send-button-bg: #28a745;
+    --text-color-dark: #333; /* Para el color del texto del h1 */
+    --border-light: #eee; /* Para el borde inferior del h1 */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--chat-bg-color);
+    display: flex;
+    flex-direction: column; /* Apila el header y el chat-container verticalmente */
+    align-items: center; /* ¡IMPORTANTE! Centra los ítems hijos (header y chat-container) horizontalmente */
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* --- ESTILOS PARA EL HEADER Y BOTÓN DE VOLVER --- */
+.header {
+    background-color: var(--chat-header-bg); /* Fondo gris claro del header */
+    color: var(--text-color-dark);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%; /* El header ocupa todo el ancho */
+    flex-shrink: 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+/* Contenedor dentro del header para alinear botón y título */
+.header .container.header-content {
+    display: flex;
+    align-items: center; /* Centra verticalmente el botón y el título */
+    justify-content: flex-start; /* Alinea el botón a la izquierda */
+    flex-wrap: wrap;
+    max-width: 600px; /* Ancho máximo igual al chat-container */
+    width: 90%; /* Ancho relativo igual al chat-container */
+    margin: 0 auto; /* Centra este contenedor dentro del header */
+    padding: 0;
+}
+
+/* Estilos para el botón "Volver al Inicio" */
+.back-button-header {
+    background-color: var(--back-button-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 18px;
+    font-size: 1em;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-right: 20px; /* Espacio a la derecha del botón para separar del título */
+}
+
+.back-button-header:hover {
+    background-color: var(--back-button-hover-color);
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+/* Ajustes para el título <h1> dentro del header del chat */
+.header .container.header-content h1 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 2em;
+    color: var(--text-color-dark);
+    flex-grow: 1; /* Permite que el título ocupe el espacio restante */
+    text-align: center; /* Centra el título dentro de su espacio */
+    line-height: 1.2;
+    padding: 0;
+}
+
+/* --- FIN DE ESTILOS PARA EL HEADER Y BOTÓN --- */
+
+
+/* Estilos del chat-container y sus elementos */
+.chat-container {
+    background-color: var(--chat-container-bg);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px; /* Coincide con el max-width del header-content */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 80vh; /* Ajusta la altura del contenedor del chat */
+    margin-top: 20px; /* Añade margen superior para separarlo del header */
+    margin-bottom: 20px; /* Añade margen inferior para que no toque el fondo de la página */
+    flex-grow: 1; /* Permite que el contenedor del chat crezca y ocupe espacio */
+}
+
+.chat-box {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: var(--chat-container-bg);
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 80%;
+    word-wrap: break-word;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.user-message {
+    background-color: var(--user-message-bg);
+    color: white;
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.assistant-message {
+    background-color: var(--assistant-message-bg);
+    color: #333;
+    align-self: flex-start;
+    margin-right: auto;
+}
+
+.input-container {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid var(--border-light);
+    background-color: var(--chat-header-bg);
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 20px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#user-input:focus {
+    outline: none;
+    border-color: var(--user-message-bg);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+#send-button {
+    background-color: var(--send-button-bg);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+}
+
+#send-button:hover {
+    background-color: #218838;
+}
+
+/* Responsive Design para el header y botón en pantallas pequeñas */
+@media (max-width: 768px) {
+    .header .container.header-content {
+        flex-direction: column; /* Apila el botón y el título en columnas */
+        align-items: center; /* Centra los elementos apilados */
+    }
+
+    .back-button-header {
+        margin-bottom: 15px; /* Espacio debajo del botón cuando está apilado */
+        width: 100%; /* El botón ocupa casi todo el ancho */
+        max-width: 200px; /* Limita el ancho máximo del botón en móviles */
+        margin-right: 0; /* Elimina el margen derecho cuando está apilado */
+    }
+
+    .header .container.header-content h1 {
+        font-size: 1.8em; /* Título más pequeño en móviles */
+        text-align: center;
+    }
+
+    .chat-container {
+        height: 85vh; /* Ajusta la altura del chat en móviles si es necesario */
+    }
+}

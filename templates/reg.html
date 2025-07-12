@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Interactiva de Regularización de Propiedades - H&M Chile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='reg.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="{{ url_for('inicio') }}" class="back-button-in-header" title="Volver al Inicio">
+                &#8592; </a>
+            <h1>Guía Interactiva: Regularización de Propiedades</h1>
+            <p>Simplifica tus trámites de regularización en Chile con nuestra guía paso a paso.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="guide-wrapper">
+            <div class="progress-bar-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <div class="progress-text" id="progressText">Paso 1 de 4: Entendiendo tu Caso</div>
+            </div>
+
+            <div class="guide-content">
+                <section class="step active" id="step1">
+                    <h2>Paso 1: ¿Qué tipo de Regularización Necesitas?</h2>
+                    <p>Es fundamental identificar el tipo de trámite para guiarte correctamente. Selecciona la opción que más se ajuste a tu situación:</p>
+
+                    <div class="option-grid">
+                        <div class="option-card" data-type="dfl2">
+                            <h3>Vivienda Social (DFL N°2)</h3>
+                            <p>Propiedades destinadas a sectores de menores ingresos. Busca beneficios tributarios y facilidades.</p>
+                        </div>
+                        <div class="option-card" data-type="ley18101">
+                            <h3>Bienes Raíces en General</h3>
+                            <p>Regularización de cualquier tipo de bien raíz que no califica como vivienda social.</p>
+                        </div>
+                        <div class="option-card" data-type="construccion">
+                            <h3>Construcción sin Permiso</h3>
+                            <p>Si construiste o ampliaste sin los permisos municipales correspondientes.</p>
+                        </div>
+                        <div class="option-card" data-type="saneamiento">
+                            <h3>Saneamiento de Títulos</h3>
+                            <p>Problemas con la inscripción de dominio o propiedad (ej. herencias no regularizadas).</p>
+                        </div>
+                    </div>
+                    <button class="btn btn-info show-popup" data-popup="infoGeneral">¿No sabes cuál elegir?</button>
+                </section>
+
+                <section class="step" id="step2">
+                    <h2>Paso 2: Reúne los Documentos Necesarios</h2>
+                    <p>Haz clic en cada documento para ver su descripción y por qué es importante para tu trámite.</p>
+
+                    <div id="documentRequirements" class="document-section">
+                        <p class="placeholder-text">Selecciona un tipo de regularización en el Paso 1 para ver los documentos requeridos.</p>
+                    </div>
+
+                    <div class="disclaimer-box">
+                        <p><strong>Importante:</strong> Esta lista es una guía general. La municipalidad o el Conservador de Bienes Raíces (CBR) podría solicitar documentos adicionales según cada caso particular. <span class="tooltip-trigger" data-tooltip-content="#tooltipCBR">¿Qué es el CBR?</span></p>
+                    </div>
+                </section>
+
+                <section class="step" id="step3">
+                    <h2>Paso 3: Entidades Involucradas y Proceso</h2>
+                    <p>Conoce los organismos y los pasos principales para llevar a cabo tu regularización.</p>
+
+                    <div id="processInfo" class="process-section">
+                        <p class="placeholder-text">Selecciona un tipo de regularización en el Paso 1 para ver el proceso detallado.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <h3>Asesoría Profesional Recomendada</h3>
+                        <p>Aunque nuestra guía es completa, te recomendamos encarecidamente la asesoría de un arquitecto o abogado especialista en bienes raíces para asegurar que tu trámite se realice correctamente y sin contratiempos. Puedes <a href="#" class="show-popup" data-popup="contactPopup">contactarnos</a> para una consulta.</p>
+                    </div>
+                </section>
+
+                <section class="step" id="step4">
+                    <h2>Paso 4: Consejos Finales y Próximos Pasos</h2>
+                    <p>¡Casi listo! Aquí tienes algunas recomendaciones finales para culminar tu proceso de regularización.</p>
+
+                    <ul class="final-tips">
+                        <li><strong>Revisa todo:</strong> Antes de presentar, verifica que todos los documentos estén completos y correctos.</li>
+                        <li><strong>Plazos:</strong> Mantente al tanto de los plazos que te indiquen las entidades.</li>
+                        <li><strong>Registro:</strong> Una vez aprobada la regularización, no olvides inscribir la propiedad en el Conservador de Bienes Raíces correspondiente.</li>
+                        <li><strong>Copias:</strong> Siempre guarda copias de todos los documentos presentados y resoluciones obtenidas.</li>
+                    </ul>
+
+                    <div class="call-to-action">
+                        <h3>¿Necesitas Ayuda Experta?</h3>
+                        <p>Nuestro equipo de abogados y arquitectos está listo para asistirte en cada etapa de tu regularización. Evita errores costosos y agiliza tu trámite.</p>
+                        <button class="btn btn-primary show-popup" data-popup="contactPopup">Agenda tu Asesoría Personalizada</button>
+                    </div>
+                </section>
+            </div>
+
+            <div class="navigation-buttons">
+                <button id="prevBtn" class="btn btn-secondary" disabled>Anterior</button>
+                <button id="nextBtn" class="btn btn-primary">Siguiente</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 H&M Chile. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <div id="infoGeneral" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>¿No sabes qué tipo de regularización necesitas?</h2>
+            <p>No te preocupes. Muchos casos tienen particularidades. Generalmente, la **Ley 18.101** es para bienes raíces en general, mientras que el **DFL N°2** aplica a viviendas sociales con ciertos metros cuadrados y características. Si construiste sin permiso, la **regularización de construcciones** es tu camino. Si tienes problemas con los papeles de la propiedad (ej. herencias sin traspasar), el **saneamiento de títulos** es lo indicado.</p>
+        </div>
+    </div>
+
+    <div id="contactPopup" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Contáctanos para una Asesoría</h2>
+            <p>¿Listo para dar el siguiente paso o tienes preguntas específicas?</p>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="contactName">Nombre:</label>
+                    <input type="text" id="contactName" name="contactName" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email:</label>
+                    <input type="email" id="contactEmail" name="contactEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="contactPhone">Teléfono (opcional):</label>
+                    <input type="tel" id="contactPhone" name="contactPhone">
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Mensaje:</label>
+                    <textarea id="contactMessage" name="contactMessage" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+            </form>
+            <p class="contact-info">O contáctanos directamente a: <a href="mailto:info@hym.cl">info@hym.cl</a></p>
+        </div>
+    </div>
+
+    <div id="documentDescriptionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="documentTitle"></h2>
+            <p id="documentDescription"></p>
+            <p class="importance"><strong>¿Por qué es importante?</strong> <span id="documentImportance"></span></p>
+        </div>
+    </div>
+
+    <div id="tooltipCBR" class="hidden-tooltip-content">
+        El **Conservador de Bienes Raíces (CBR)** es una institución encargada de mantener el registro público de la propiedad inmueble en Chile. Aquí se inscriben las propiedades, se transfieren dominios y se registran gravámenes. Es fundamental para la seguridad jurídica de los bienes raíces.
+    </div>
+
+    <script src="{{ url_for('static', filename='script2.js') }}"></script>
+</body>
+</html>

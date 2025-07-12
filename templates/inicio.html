@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>H&M Asesoría Legal - Expertos en Derecho</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos personalizados para imitar una página judicial típica */
+        body {
+            font-family: 'Georgia', serif; /* Fuente más clásica para el cuerpo */
+            color: #333;
+            background-color: #f8f9fa; /* Un gris muy claro */
+            padding-top: 90px; /* Espacio para la navbar fija */
+        }
+        .navbar {
+            background-color: #0d2a4a; /* Azul oscuro corporativo */
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            color: #ffffff !important; /* Texto del logo blanco */
+            font-family: 'Times New Roman', serif; /* Fuente más formal para el logo */
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-right: 2rem; /* Espacio entre logo y nav items */
+        }
+        .navbar-nav .nav-link {
+            color: #e0e0e0 !important; /* Links en gris claro */
+            font-size: 1.1rem;
+            margin-right: 1.5rem;
+            transition: color 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffffff !important; /* Blanco al pasar el ratón */
+        }
+        /* Estilos para el dropdown */
+        .dropdown-menu {
+            background-color: #0d2a4a; /* Fondo del menú desplegable */
+            border-radius: 0;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            padding: 0;
+        }
+        .dropdown-item {
+            color: #e0e0e0 !important;
+            padding: 0.75rem 1.5rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .dropdown-item:hover, .dropdown-item:active, .dropdown-item:focus {
+            background-color: #1a4d7d !important; /* Azul ligeramente más claro al pasar el ratón */
+            color: #ffffff !important;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 450px; /* Altura fija para la imagen */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-align: center;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://via.placeholder.com/1500x450/0d2a4a/ffffff?text=Justicia+y+Confianza') no-repeat center center; /* Imagen de fondo */
+            background-size: cover;
+            padding: 4rem 1rem;
+        }
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-family: 'Lora', serif; /* Fuente elegante para el título */
+        }
+        .hero-section p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+        }
+        .description-section {
+            padding: 4rem 1rem;
+            background-color: #ffffff;
+            text-align: center;
+        }
+        .description-section h2 {
+            font-size: 2.5rem;
+            color: #0d2a4a;
+            margin-bottom: 2rem;
+            font-family: 'Playfair Display', serif; /* Fuente más sofisticada */
+        }
+        .description-section p {
+            font-size: 1.1rem;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #555;
+        }
+        .services-section {
+            padding: 4rem 1rem;
+            background-color: #f0f4f8; /* Un azul muy claro, casi blanco */
+        }
+        .services-section h2 {
+            font-size: 2.5rem;
+            color: #0d2a4a;
+            text-align: center;
+            margin-bottom: 3rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .service-card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            text-align: center;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+        }
+        .service-card .icon {
+            font-size: 3.5rem;
+            color: #0d2a4a;
+            margin-bottom: 1.5rem;
+        }
+        .service-card h3 {
+            font-size: 1.6rem;
+            color: #0d2a4a;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+        }
+        .service-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.7;
+        }
+        .footer {
+            background-color: #0d2a4a;
+            color: #e0e0e0;
+            padding: 2rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        .footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        /* Media Queries para responsividad */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            .hero-section p {
+                font-size: 1.2rem;
+            }
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            .navbar-nav .nav-link {
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">H&M Asesoría Legal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownGuia" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Guía Usuario
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownGuia">
+                            <li><a class="dropdown-item" href="/reg">Regularización de Propiedades</a></li>
+                            <li><a class="dropdown-item" href="#">Otros Trámites</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Asistenteia">Asistente IA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cerrar Sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1>Justicia Clara, Soluciones Efectivas.</h1>
+            <p>En H&M Asesoría Legal, transformamos la complejidad jurídica en tranquilidad para usted. Con un equipo de expertos dedicados y el respaldo de la última tecnología en inteligencia artificial, le brindamos orientación legal precisa y accesible.</p>
+        </div>
+    </section>
+
+    <section class="description-section">
+        <div class="container">
+            <h2>Nuestra Misión: Su Confianza, Nuestra Prioridad</h2>
+            <p>En H&M Asesoría Legal, combinamos la experiencia jurídica tradicional con la innovación tecnológica para ofrecerle un servicio sin precedentes. Nos dedicamos a proporcionar soluciones legales personalizadas y eficientes, asegurando que cada cliente reciba la atención y el soporte que merece. Confiamos en que la claridad y la accesibilidad son fundamentales en el ámbito legal, y por ello, estamos comprometidos a ser su guía confiable en cada paso del proceso.</p>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <h2>Nuestros Servicios Destacados</h2>
+            <div class="row">
+                <div class="col-md-4 d-flex">
+                    <div class="service-card">
+                        <div>
+                            <div class="icon"><i class="fas fa-gavel"></i></div>
+                            <h3>Asesoría Legal Especializada</h3>
+                            <p>Ofrecemos consultoría experta en diversas áreas del derecho, incluyendo civil, penal, laboral y familiar. Nuestro equipo de abogados está listo para brindarle la orientación necesaria.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="service-card">
+                        <div>
+                            <div class="icon"><i class="fas fa-robot"></i></div>
+                            <h3>Asistencia con IA Avanzada</h3>
+                            <p>Acceda a nuestro asistente de inteligencia artificial para obtener respuestas rápidas a sus preguntas jurídicas más frecuentes, disponible 24/7 para su comodidad.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex">
+                    <div class="service-card">
+                        <div>
+                            <div class="icon"><i class="fas fa-file-alt"></i></div>
+                            <h3>Gestión de Documentos Legales</h3>
+                            <p>Le ayudamos en la redacción, revisión y gestión de contratos, escrituras y otros documentos legales, asegurando su validez y cumplimiento normativo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 H&M Asesoría Legal. Todos los derechos reservados.</p>
+            <p><a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

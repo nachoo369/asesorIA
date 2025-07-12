@@ -1,0 +1,24 @@
+# Entorno virtual de Python
+asistente_legal_env/
+venv/
+.venv/
+env/
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
+
+# Archivos de caché de IDEs (ej. VS Code, PyCharm)
+.idea/
+.vscode/
+
+# Archivos de bases de datos
+*.db
+*.sqlite3
+
+# Archivos de log
+*.log
+
+# Archivos de sistema operativo
+.DS_Store # macOS
+Thumbs.db # Windows

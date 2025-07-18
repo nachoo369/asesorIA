@@ -1,5 +1,3 @@
-¡Claro que sí! Aquí tienes un README.md completo para tu Asistente Jurídico IA, incluyendo una sección sobre el index.html de prueba, todo en español.
-
 🚀 Asistente Jurídico IA: Recuperación Inteligente de Información Legal
 ✨ Descripción del Proyecto
 Este proyecto implementa un asistente jurídico impulsado por Inteligencia Artificial diseñado para simplificar el acceso a la información legal en Chile. Utiliza Grandes Modelos de Lenguaje (LLMs), Generación Aumentada por Recuperación (RAG) y agentes inteligentes para proporcionar respuestas precisas, contextualizadas y citadas con fuentes, basándose en un corpus de documentos PDF locales y búsquedas web en tiempo real.
@@ -48,8 +46,8 @@ Sigue estos pasos para poner en marcha tu Asistente Jurídico IA en tu entorno l
 1. Clonar el Repositorio
 Bash
 
-git clone https://github.com/tu_usuario/tu_repositorio.git # Reemplaza con la URL de tu repositorio
-cd tu_carpeta_proyecto
+git clone https://github.com/nachoo369/asesorIA.git
+cd asesorIA
 2. Crear un Entorno Virtual
 Es altamente recomendable usar un entorno virtual para gestionar las dependencias del proyecto.
 
